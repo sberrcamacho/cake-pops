@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sberrcamacho.github.io/cake-pops/sitemap.xml
