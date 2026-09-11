@@ -135,6 +135,13 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
 }
 
+@media (max-width: 400px) {
+  /* En pantallas muy angostas, "artesanales" (una sola palabra, no puede
+     partirse) empuja el botón de menú fuera del header. Se oculta para
+     que la marca y el botón hamburguesa siempre quepan en una fila. */
+  .brand-tagline { display: none; }
+}
+
 .nav-links {
   display: none;
   align-items: center;
@@ -769,6 +776,11 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 32px 64px -34px rgba(138, 42, 59, 0.65);
 }
 
+@media (max-width: 480px) {
+  /* Da más ancho disponible al título de una sola línea de abajo. */
+  .order-card { padding-left: 16px; padding-right: 16px; }
+}
+
 .order-heading {
   text-align: center;
   margin: 0 auto;
@@ -789,7 +801,7 @@ img { max-width: 100%; display: block; }
 .order-heading h2 {
   font-family: 'DM Serif Display', Georgia, serif;
   font-weight: 600;
-  font-size: clamp(20px, 5.8vw, 54px);
+  font-size: clamp(18px, 5.8vw, 54px);
   line-height: 1.08;
   margin: 18px 0 0;
   color: var(--cream-on-dark-2);
