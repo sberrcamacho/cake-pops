@@ -22,9 +22,12 @@ design_handoff_cake_pops_landing/   Especificación de diseño original (referen
 
 El diseño reproduce fielmente la especificación de
 `design_handoff_cake_pops_landing/Cake Pops Landing.dc.html` y su README (colores, tipografía
-`DM Serif Display` + `Jost`, spacing, radios y copy). Las fotos de producto son de stock —
-provistas en el handoff de diseño— y deben reemplazarse por fotografía propia del negocio antes de
-usarse en producción a largo plazo.
+`DM Serif Display` + `Jost`, spacing, radios y copy), con la interfaz escalada ~12% para una
+presencia visual más grande. El hero, la tarjeta de Vainilla y la sección "Nosotros" ya usan fotos
+reales del producto (`hero-actual.png`, `vainilla-actual.png`, `nosotros-actual.png` en el
+handoff); el destacado "Nuevo sabor" y las tarjetas de Red Velvet y Vainilla con Oreo siguen
+usando fotos de stock provistas en el handoff y deben reemplazarse por fotografía propia del
+negocio antes de usarse en producción a largo plazo.
 
 ## Desarrollo local
 

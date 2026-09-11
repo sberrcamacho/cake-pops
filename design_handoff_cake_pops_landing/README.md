@@ -133,14 +133,13 @@ Prácticamente inexistente:
 
 ## Assets
 - **Fotografías (provisionales)**: en `uploads/`. Son referencias encontradas en internet más una foto real de producción (`cake-original.jpg`). **No son propiedad del emprendimiento**: deben reemplazarse por fotos propias antes de publicar y no deben atribuirse a la marca. Asignación actual:
-  - Hero → `cake-vainilla-3-e35ed00a.jpg`
+  - Hero → `hero-actual.png`
   - Destacado "Nuevo sabor" → `cake-oreo-9e9611ea.jpg`
   - Tarjeta Red Velvet → `decorated_chocolate_truffles.jpg`
-  - Tarjeta Vainilla → `cake-vainilla-cb8872fe.jpg`
+  - Tarjeta Vainilla → `vainilla-actual.png`
   - Tarjeta Vainilla con Oreo → `cake-oreo-3-bd53962c.jpg`
-  - Nosotros → `cake-original.jpg` (foto real del proceso)
+  - Nosotros → `nosotros-actual.png` (foto real del proceso)
   Cada imagen ocupa un contenedor con `aspect-ratio` fijo y `object-fit:cover`, por lo que sustituirlas no altera el layout.
-  La carpeta incluye además fotos alternativas no usadas por si se quiere recomponer alguna sección: `cake-oreo-2-08e92009.jpg`, `cake-redvelvet-2-922efa2a.jpg`, `chocolate_cake_pops_rainbow.jpg`, `cakeredvelvet.jpg`.
 - **Iconos**: ninguno externo. Los cuatro iconos de "¿Por qué elegirnos?" son formas CSS (círculo, tres puntos, "$" en serif, cuadrado rotado). Pueden sustituirse por un set de iconos del proyecto manteniendo el cuadro 38×38px.
 - **Fuentes**: DM Serif Display y Jost desde Google Fonts. En producción conviene autohospedarlas o usar el mecanismo de fuentes del framework.
 - **Logo**: no existe. El navbar usa el nombre provisional "CAKE POPS" como wordmark.
