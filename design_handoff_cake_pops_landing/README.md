@@ -3,7 +3,7 @@
 ## Overview
 Landing page comercial de una sola página para un emprendimiento de cake pops artesanales (tres socios, Colombia). Objetivo: que un visitante que llega desde redes sociales entienda qué se vende, compare los tres sabores y sus precios, y pida por WhatsApp en pocos segundos. Prioridad absoluta: experiencia móvil.
 
-Secciones, en orden: Navbar · Hero · Nuevo sabor (destacado Vainilla con Oreo) · Sabores · ¿Por qué elegirnos? · Nosotros · Pedidos (CTA) · Footer.
+Secciones, en orden: Navbar · Hero · Nuevo sabor (destacado Oreo) · Sabores · ¿Por qué elegirnos? · Nosotros · Pedidos (CTA) · Footer.
 
 ## About the Design Files
 Los archivos de este paquete son **referencias de diseño hechas en HTML** — prototipos que muestran la apariencia y el comportamiento previstos, no código de producción para copiar tal cual. `Cake Pops Landing.dc.html` usa un runtime propio de prototipado (plantilla con `{{ }}`, `<sc-if>`, estilos inline) y un web component `<image-slot>` para las fotos.
@@ -34,14 +34,14 @@ Una sola vista, ancho de contenido máximo **1160px**, padding horizontal **20px
   - "Hacer un pedido" → `#pedidos`: fondo `#FFF`, texto `#3A2317`, borde `1px solid #E3D5C4`; hover borde y texto `#8A2A3B` + `translateY(-2px)`.
 - **Imagen**: slot `aspect-ratio:4/5`, `border-radius:28px`, sombra `0 30px 60px -34px rgba(58,35,23,0.45)`. Contenido: varios cake pops juntos.
 
-### 3. Nuevo sabor — destacado Vainilla con Oreo
+### 3. Nuevo sabor — destacado Oreo
 Sección oscura, fondo `#3A2317`, padding `clamp(44px,6.5vw,88px) 0`. Va **antes** de la sección de sabores.
 - **Layout**: flex `flex-wrap:wrap-reverse`, `gap:clamp(26px,4vw,56px)`; texto `flex:1 1 300px`, imagen `flex:1 1 320px` con `aspect-ratio:1/1`, radio 28px, sombra `0 30px 60px -30px rgba(0,0,0,0.6)`.
 - **Badge**: "Nuevo sabor" — 10.5px uppercase, `letter-spacing:0.2em`, texto `#3A2317` sobre `#F4C95D`, pill `padding:6px 13px`.
-- **H2**: "Vainilla con Oreo" — DM Serif Display, `clamp(32px,5.6vw,50px)`, `#FDF6EE`.
-- **Texto**: "La combinación de vainilla y Oreo que más gusta." — `clamp(16px,2vw,19px)`, peso 300, `#E2CDBB`.
+- **H2**: "Oreo" — DM Serif Display, `clamp(32px,5.6vw,50px)`, `#FDF6EE`.
+- **Texto**: "Lo último que sumamos a la carta: galleta Oreo bajo una cobertura de chocolate blanco." — `clamp(16px,2vw,19px)`, peso 300, `#E2CDBB`.
 - **Precio**: "$3.500" DM Serif Display 34px `#FDF6EE` + "COP" 12px uppercase `#B9A08F`.
-- **CTA**: "Probar Vainilla con Oreo" → `#pedidos`; fondo `#F6EDE2`, texto `#3A2317`, `min-height:52px`, pill; hover fondo `#F4C95D` + `translateY(-2px)`.
+- **CTA**: "Probar Oreo" → `#pedidos`; fondo `#F6EDE2`, texto `#3A2317`, `min-height:52px`, pill; hover fondo `#F4C95D` + `translateY(-2px)`.
 
 ### 4. Sabores (`#sabores`)
 Fondo `#FFFDFA`, bordes superior/inferior `1px solid #F0E6DA`.
@@ -56,7 +56,7 @@ Fondo `#FFFDFA`, bordes superior/inferior `1px solid #F0E6DA`.
 - **Contenido exacto de las tres tarjetas**:
   1. **Red Velvet** — etiqueta `Premium` (texto `#FFF` sobre `#8A2A3B`) + cinta superior izquierda "El favorito de la casa" (texto `#3A2317` sobre `#F4C95D`, 9.5px uppercase, pill, `top:14px; left:14px`). "Nuestro sabor distintivo, con el característico sabor Red Velvet y cobertura de chocolate negro." — **$3.500**
   2. **Vainilla** — etiqueta `Económico` (texto `#5E4433`, fondo `#F3E7D6`, borde `#E7D6BF`). "El clásico de vainilla, sencillo, delicioso y perfecto para cualquier ocasión." — **$3.000**
-  3. **Vainilla con Oreo** — etiqueta `Nuevo sabor` (texto `#6B4A12`, fondo `#FCF1D6`, borde `#F0DCA8`). "La combinación de vainilla y Oreo que más gusta." — **$3.500**
+  3. **Oreo** — etiqueta `Nuevo sabor` (texto `#6B4A12`, fondo `#FCF1D6`, borde `#F0DCA8`). "Oreo con cobertura de chocolate blanco, la combinación que más gusta." — **$3.500**
 
 ### 5. ¿Por qué elegirnos?
 Fondo `#FBF5EE`. H2 centrado "Un pequeño detalle, un gran antojo." (`max-width:18ch`).
@@ -137,7 +137,7 @@ Prácticamente inexistente:
   - Destacado "Nuevo sabor" → `cake-oreo-9e9611ea.jpg`
   - Tarjeta Red Velvet → `decorated_chocolate_truffles.jpg`
   - Tarjeta Vainilla → `vainilla-actual.png`
-  - Tarjeta Vainilla con Oreo → `cake-oreo-3-bd53962c.jpg`
+  - Tarjeta Oreo → `cake-oreo-3-bd53962c.jpg`
   - Nosotros → `nosotros-actual.png` (foto real del proceso)
   Cada imagen ocupa un contenedor con `aspect-ratio` fijo y `object-fit:cover`, por lo que sustituirlas no altera el layout.
 - **Iconos**: ninguno externo. Los cuatro iconos de "¿Por qué elegirnos?" son formas CSS (círculo, tres puntos, "$" en serif, cuadrado rotado). Pueden sustituirse por un set de iconos del proyecto manteniendo el cuadro 38×38px.
@@ -148,7 +148,7 @@ Prácticamente inexistente:
 - Nombre definitivo de la marca (hoy "CAKE POPS", provisional).
 - Redes sociales: **no hay**; se eliminó toda referencia a Instagram a propósito.
 - Dirección, horarios, domicilios, combos por 3/6/12 unidades, pedidos personalizados, eventos y promociones: aún sin definir. El diseño deja espacio para añadirlos como nuevas tarjetas/secciones sin rehacer el layout.
-- Datos confirmados: precios (Red Velvet $3.500, Vainilla $3.000, Vainilla con Oreo $3.500 COP), WhatsApp +57 301 303 8919, Nequi 314 587 7853, socios Sara Ospina Sanchez, Simon Florez Ramirez, Samuel Berrio Camacho.
+- Datos confirmados: precios (Red Velvet $3.500, Vainilla $3.000, Oreo $3.500 COP), WhatsApp +57 301 303 8919, Nequi 314 587 7853, socios Sara Ospina Sanchez, Simon Florez Ramirez, Samuel Berrio Camacho.
 
 ## Files
 - `Cake Pops Landing.dc.html` — diseño completo (plantilla + lógica). Referencia visual principal.
