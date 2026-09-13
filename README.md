@@ -1,9 +1,9 @@
-# Cake Pops — landing page
+# mini bites — landing page
 
-Landing page de una sola página para un emprendimiento de cake pops artesanales, construida en
+Landing page de una sola página para mini bites, un emprendimiento de cake pops artesanales, construida en
 HTML, CSS y JavaScript planos (sin frameworks ni paso de build), publicada con GitHub Pages.
 
-🔗 **Sitio publicado:** https://sberrcamacho.github.io/cake-pops/
+🔗 **Sitio publicado:** https://sberrcamacho.github.io/mini-bites/
 
 ## Estructura
 
@@ -22,7 +22,7 @@ design_handoff_cake_pops_landing/   Especificación de diseño original (referen
 
 El diseño reproduce fielmente la especificación de
 `design_handoff_cake_pops_landing/Cake Pops Landing.dc.html` y su README (colores, tipografía
-`DM Serif Display` + `Jost`, spacing, radios y copy), con la interfaz escalada ~12% para una
+`DM Serif Display` + `Jost`, spacing, radios y copy), con la interfaz escalada ~19% para una
 presencia visual más grande. El hero, la tarjeta de Vainilla y la sección "Nosotros" ya usan fotos
 reales del producto (`hero-actual.png`, `vainilla-actual.png`, `nosotros-actual.png` en el
 handoff); el destacado "Nuevo sabor" y las tarjetas de Red Velvet y Vainilla con Oreo siguen
