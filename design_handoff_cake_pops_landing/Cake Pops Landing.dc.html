@@ -25,9 +25,12 @@
 
   <header style="position:sticky;top:0;z-index:50;background:rgba(251,245,238,0.94);backdrop-filter:blur(10px);border-bottom:1px solid #EADFD1">
     <div style="max-width:1160px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-      <a href="#inicio" style="display:flex;align-items:baseline;gap:8px;color:#3A2317">
-        <span style="font-family:'DM Serif Display',Georgia,serif;font-size:21px;letter-spacing:0.01em">{{ brandName }}</span>
-        <span style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#9A8574;font-weight:500">artesanales</span>
+      <a href="#inicio" style="display:flex;align-items:center;gap:10px;color:#3A2317">
+        <img src="./uploads/pasted-1789326841078-0.png" alt="mini bites" style="width:42px;height:42px;border-radius:50%;object-fit:cover;flex:none">
+        <span style="display:flex;flex-direction:column;line-height:1.05">
+          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:20px;letter-spacing:0.01em">{{ brandName }}</span>
+          <span style="font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:#9A8574;font-weight:500">cake pops artesanales</span>
+        </span>
       </a>
 
       <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
@@ -257,17 +260,21 @@
 
       <a href="https://wa.me/573013038919" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;min-height:58px;margin:clamp(26px,3.5vw,34px) auto 0;max-width:400px;padding:0 28px;border-radius:999px;background:#FFF7F2;color:#8A2A3B;font-size:17px;font-weight:600;letter-spacing:0.01em;transition:transform .25s ease,background .25s ease" style-hover="background:#FFF;color:#631E2B;transform:translateY(-2px)">Hacer pedido por WhatsApp</a>
       <p style="font-size:13.5px;color:#F0C4C9;margin:16px 0 0;font-weight:300;text-align:center">Escríbenos a <span style="font-weight:500;color:#FFF7F2;white-space:nowrap">+57 301 303 8919</span> con el sabor y la cantidad, y te confirmamos tu pedido.</p>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 14px;margin:18px auto 0;padding:14px 20px;max-width:420px;background:rgba(255,247,242,0.1);border:1px solid rgba(255,247,242,0.28);border-radius:18px;text-align:center">
+      <button type="button" onClick="{{ copyNequi }}" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 14px;margin:18px auto 0;padding:16px 20px;max-width:420px;width:100%;min-height:56px;background:rgba(255,247,242,0.1);border:1px solid rgba(255,247,242,0.28);border-radius:18px;text-align:center;cursor:pointer;font-family:inherit;transition:background .25s ease,transform .25s ease" style-hover="background:rgba(255,247,242,0.2);transform:translateY(-2px)">
         <span style="font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#FBE4E4;font-weight:500">Transferencias</span>
         <span style="font-size:16px;font-weight:500;color:#FFF7F2;white-space:nowrap">Nequi 314 587 7853</span>
-      </div>
+        <span style="font-size:12.5px;color:#FBE4E4;font-weight:400">{{ nequiLabel }}</span>
+      </button>
     </div>
   </section>
 
   <footer style="background:#3A2317;color:#E2CDBB;padding:clamp(40px,5.5vw,72px) 20px 28px">
     <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(26px,4vw,48px)">
       <div>
-        <div style="font-family:'DM Serif Display',Georgia,serif;font-size:24px;color:#FDF6EE">{{ brandName }}</div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <img src="./uploads/pasted-1789326841078-0.png" alt="mini bites" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none">
+          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:24px;color:#FDF6EE">{{ brandName }}</span>
+        </div>
         <p style="font-size:14.5px;line-height:1.55;margin:10px 0 0;font-weight:300;max-width:32ch">{{ tagline }}</p>
       </div>
       <div>
@@ -295,7 +302,7 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
-  &quot;brandName&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;CAKE POPS&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Marca&quot;},
+  &quot;brandName&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;mini bites&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Marca&quot;},
   &quot;tagline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Pequeños bocados, grandes momentos.&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Marca&quot;}
 }">
 class Component extends DCLogic {
@@ -307,15 +314,42 @@ class Component extends DCLogic {
   }
   componentWillUnmount() { window.removeEventListener('resize', this._onResize); }
 
+  copyNequi = () => {
+    const n = '3145877853';
+    const done = (ok) => {
+      this.setState({ nequiCopied: ok ? 'ok' : 'fail' });
+      clearTimeout(this._nq);
+      this._nq = setTimeout(() => this.setState({ nequiCopied: null }), 2600);
+    };
+    const fallback = () => {
+      try {
+        const t = document.createElement('textarea');
+        t.value = n;
+        t.setAttribute('readonly', '');
+        t.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+        document.body.appendChild(t);
+        t.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(t);
+        done(ok);
+      } catch (e) { done(false); }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(n).then(() => done(true), fallback);
+    } else fallback();
+  };
+
   renderVals() {
     const wide = this.state.w >= 760;
     return {
+      copyNequi: this.copyNequi,
+      nequiLabel: this.state.nequiCopied === 'ok' ? 'Número copiado' : this.state.nequiCopied === 'fail' ? 'Copia el número manualmente' : 'Toca para copiar',
       wide,
       narrow: !wide,
       menuOpen: !wide && this.state.menuOpen,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       closeMenu: () => this.setState({ menuOpen: false }),
-      brandName: this.props.brandName ?? 'CAKE POPS',
+      brandName: this.props.brandName ?? 'mini bites',
       tagline: this.props.tagline ?? 'Pequeños bocados, grandes momentos.',
       year: new Date().getFullYear()
     };

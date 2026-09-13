@@ -1,7 +1,7 @@
-# Handoff: Landing page de cake pops artesanales
+# Handoff: mini bites — landing page de cake pops artesanales
 
 ## Overview
-Landing page comercial de una sola página para un emprendimiento de cake pops artesanales (tres socios, Colombia). Objetivo: que un visitante que llega desde redes sociales entienda qué se vende, compare los tres sabores y sus precios, y pida por WhatsApp en pocos segundos. Prioridad absoluta: experiencia móvil.
+Landing page comercial de una sola página para **mini bites**, emprendimiento de cake pops artesanales (tres socios, Colombia). Objetivo: que un visitante que llega desde redes sociales entienda qué se vende, compare los tres sabores y sus precios, y pida por WhatsApp en pocos segundos. Prioridad absoluta: experiencia móvil.
 
 Secciones, en orden: Navbar · Hero · Nuevo sabor (destacado Oreo) · Sabores · ¿Por qué elegirnos? · Nosotros · Pedidos (CTA) · Footer.
 
@@ -19,7 +19,7 @@ Una sola vista, ancho de contenido máximo **1160px**, padding horizontal **20px
 ### 1. Navbar
 - **Propósito**: navegación interna y acceso permanente a Pedidos.
 - **Layout**: `position:sticky; top:0; z-index:50`, alto **64px**, fondo `rgba(251,245,238,0.94)` con `backdrop-filter:blur(10px)`, borde inferior `1px solid #EADFD1`. Contenido en flex, `justify-content:space-between`.
-- **Logo**: "CAKE POPS" en DM Serif Display 21px + "artesanales" 9px, `letter-spacing:0.22em`, uppercase, `#9A8574`.
+- **Logo**: imagen circular del logo (ratón de la marca) 42×42px `border-radius:50%` `object-fit:cover` + bloque de texto en columna: "mini bites" en DM Serif Display 20px y "cake pops artesanales" 8.5px, `letter-spacing:0.22em`, uppercase, `#9A8574`. Flex `align-items:center`, `gap:10px`, enlaza a `#inicio`.
 - **Links desktop** (≥760px): Inicio · Sabores · Nosotros en Jost 14.5px `#4A3327`, `gap:34px`, hover `#8A2A3B`. "Pedidos" es pill `#3A2317`, texto blanco 14px, `padding:10px 20px`, `border-radius:999px`; hover `background:#8A2A3B; transform:translateY(-1px)`, transición `.25s ease`.
 - **Móvil (<760px)**: botón hamburguesa 46×46px, borde `1px solid #E3D5C4`, radio 14px, tres barras 18×1.5px `#3A2317`; hover `background:#F3E9DC`. Al abrir, panel vertical debajo del navbar: links con `min-height:48px`, 17px, separador `1px solid #F0E6DA`, y al final pill oscuro "Hacer un pedido" (`min-height:52px`). El menú se cierra al pulsar cualquier link.
 - **Navegación**: anchors internos (`#inicio`, `#sabores`, `#nosotros`, `#pedidos`) con `html{scroll-behavior:smooth}`.
@@ -75,13 +75,14 @@ Fondo de sección `#FBF5EE`, padding `clamp(52px,7.5vw,100px) 20px`. Tarjeta `ma
 - **Resumen de sabores**: grid `repeat(auto-fit,minmax(min(100%,200px),1fr))`, `gap:12px`; cada celda fondo `rgba(255,247,242,0.1)`, borde `rgba(255,247,242,0.28)`, radio 18px, `padding:16px 18px`; hover fondo `rgba(255,247,242,0.18)`. Contenido: etiqueta (Favorito de la casa `#F4C95D` / Económico `#FBE4E4` / Nuevo sabor `#F4C95D`), nombre 17px/500 `#FFF7F2`, precio DM Serif Display 22px.
 - **CTA principal**: "Hacer pedido por WhatsApp" → `https://wa.me/573013038919` (`target="_blank" rel="noopener"`); `max-width:400px`, `min-height:58px`, pill `#FFF7F2`, texto `#8A2A3B` 17px/600; hover fondo `#FFF`, texto `#631E2B`, `translateY(-2px)`.
 - **Nota**: "Escríbenos a +57 301 303 8919 con el sabor y la cantidad, y te confirmamos tu pedido." (13.5px `#F0C4C9`, número en `#FFF7F2` con `white-space:nowrap`).
-- **Transferencias**: bloque centrado `max-width:420px`, fondo `rgba(255,247,242,0.1)`, borde `rgba(255,247,242,0.28)`, radio 18px, `padding:14px 20px`: etiqueta "Transferencias" (10.5px uppercase `#FBE4E4`) + "Nequi 314 587 7853" (16px/500 `#FFF7F2`, `nowrap`).
+- **Transferencias**: **botón** (no bloque estático) `max-width:420px`, `width:100%`, `min-height:56px`, fondo `rgba(255,247,242,0.1)`, borde `rgba(255,247,242,0.28)`, radio 18px, `padding:16px 20px`, `cursor:pointer`; hover `background:rgba(255,247,242,0.2)` + `translateY(-2px)`. Contenido: etiqueta "Transferencias" (10.5px uppercase `#FBE4E4`), "Nequi 314 587 7853" (16px/500 `#FFF7F2`, `nowrap`) y una tercera línea de estado 12.5px `#FBE4E4`.
+  **Comportamiento**: al pulsar copia `3145877853` al portapapeles. Estado por defecto "Toca para copiar"; tras copiar "Número copiado"; si el navegador bloquea la API, "Copia el número manualmente". El estado vuelve al valor por defecto a los 2.6s. Implementar con `navigator.clipboard.writeText` y fallback a `textarea` + `document.execCommand('copy')`, dando feedback visible también en el camino de fallo. Nequi no ofrece un enlace público de cobro, por eso no es un `<a>`; si más adelante hay link de cobro, sustituir el botón por un enlace manteniendo el mismo estilo.
 - Sin carrito ni formulario: el único camino de conversión es WhatsApp.
 
 ### 8. Footer
 Fondo `#3A2317`, texto `#E2CDBB`, padding `clamp(40px,5.5vw,72px) 20px 28px`.
-- Grid `repeat(auto-fit,minmax(min(100%,220px),1fr))`, `gap:clamp(26px,4vw,48px)`: (a) marca "CAKE POPS" DM Serif Display 24px `#FDF6EE` + "Pequeños bocados, grandes momentos." 14.5px peso 300; (b) Navegación (Inicio, Sabores, Nosotros, Pedidos, 14.5px `#E2CDBB`, hover `#E8A9B4`); (c) Contacto: "WhatsApp: +57 301 303 8919" (link wa.me) y "Nequi: 314 587 7853". Encabezados de columna 10.5px uppercase `letter-spacing:0.2em` `#B9A08F`.
-- Barra inferior: `border-top:1px solid #55392A`, 12.5px `#B9A08F`, alineada a la derecha: "© <año actual> CAKE POPS. Todos los derechos reservados." El año se calcula en runtime.
+- Grid `repeat(auto-fit,minmax(min(100%,220px),1fr))`, `gap:clamp(26px,4vw,48px)`: (a) marca — logo circular 52×52px + "mini bites" DM Serif Display 24px `#FDF6EE` (flex `gap:12px`) + "Pequeños bocados, grandes momentos." 14.5px peso 300; (b) Navegación (Inicio, Sabores, Nosotros, Pedidos, 14.5px `#E2CDBB`, hover `#E8A9B4`); (c) Contacto: "WhatsApp: +57 301 303 8919" (link wa.me) y "Nequi: 314 587 7853". Encabezados de columna 10.5px uppercase `letter-spacing:0.2em` `#B9A08F`.
+- Barra inferior: `border-top:1px solid #55392A`, 12.5px `#B9A08F`, alineada a la derecha: "© <año actual> mini bites. Todos los derechos reservados." El año se calcula en runtime.
 
 ## Interactions & Behavior
 - **Navegación**: solo anchors internos + scroll suave. Ningún enrutado.
@@ -97,7 +98,8 @@ Prácticamente inexistente:
 - `menuOpen: boolean` — menú hamburguesa.
 - `viewportWidth: number` — solo si se replica el cambio desktop/móvil en JS; preferible resolverlo con CSS.
 - `year` — `new Date().getFullYear()` para el copyright.
-- Props configurables del prototipo: `brandName` (por defecto "CAKE POPS") y `tagline` (por defecto "Pequeños bocados, grandes momentos."). Mantenerlos como constantes o variables de contenido: el nombre definitivo de la marca aún no está decidido y debe poder cambiarse en un solo lugar.
+- `nequiCopied: 'ok' | 'fail' | null` — estado efímero del botón de transferencias (se limpia solo a los 2.6s).
+- Props configurables del prototipo: `brandName` (por defecto "mini bites") y `tagline` (por defecto "Pequeños bocados, grandes momentos."). Mantenerlos como constantes o variables de contenido, en un solo lugar.
 
 ## Design Tokens
 **Colores**
@@ -139,16 +141,16 @@ Prácticamente inexistente:
   - Tarjeta Vainilla → `vainilla-actual.png`
   - Tarjeta Oreo → `cake-oreo-3-bd53962c.jpg`
   - Nosotros → `nosotros-actual.png` (foto real del proceso)
+  - Logo → `pasted-1789326841078-0.png` (navbar y footer)
   Cada imagen ocupa un contenedor con `aspect-ratio` fijo y `object-fit:cover`, por lo que sustituirlas no altera el layout.
 - **Iconos**: ninguno externo. Los cuatro iconos de "¿Por qué elegirnos?" son formas CSS (círculo, tres puntos, "$" en serif, cuadrado rotado). Pueden sustituirse por un set de iconos del proyecto manteniendo el cuadro 38×38px.
 - **Fuentes**: DM Serif Display y Jost desde Google Fonts. En producción conviene autohospedarlas o usar el mecanismo de fuentes del framework.
-- **Logo**: no existe. El navbar usa el nombre provisional "CAKE POPS" como wordmark.
+- **Logo**: `uploads/pasted-1789326841078-0.png` — logo circular de mini bites (ratón con cake pop, aro amarillo). Se usa a 42px en el navbar y 52px en el footer, recortado en círculo. Pedir al cliente una versión vectorial y un favicon derivado.
 
 ## Datos pendientes (no inventar)
-- Nombre definitivo de la marca (hoy "CAKE POPS", provisional).
 - Redes sociales: **no hay**; se eliminó toda referencia a Instagram a propósito.
 - Dirección, horarios, domicilios, combos por 3/6/12 unidades, pedidos personalizados, eventos y promociones: aún sin definir. El diseño deja espacio para añadirlos como nuevas tarjetas/secciones sin rehacer el layout.
-- Datos confirmados: precios (Red Velvet $3.500, Vainilla $3.000, Oreo $3.500 COP), WhatsApp +57 301 303 8919, Nequi 314 587 7853, socios Sara Ospina Sanchez, Simon Florez Ramirez, Samuel Berrio Camacho.
+- Datos confirmados: nombre de marca **mini bites**, precios (Red Velvet $3.500, Vainilla $3.000, Oreo $3.500 COP), WhatsApp +57 301 303 8919, Nequi 314 587 7853, socios Sara Ospina Sanchez, Simon Florez Ramirez, Samuel Berrio Camacho.
 
 ## Files
 - `Cake Pops Landing.dc.html` — diseño completo (plantilla + lógica). Referencia visual principal.

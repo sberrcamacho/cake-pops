@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CAKE POPS — Cake pops artesanales</title>
+    <title>mini bites — Cake pops artesanales</title>
     <meta
       name="description"
       content="Cake pops artesanales hechos a mano: Red Velvet, Vainilla y Oreo. Pequeños, deliciosos y hechos para disfrutar. Haz tu pedido por WhatsApp."
@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://sberrcamacho.github.io/cake-pops/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="CAKE POPS — Cake pops artesanales" />
+    <meta property="og:title" content="mini bites — Cake pops artesanales" />
     <meta
       property="og:description"
       content="Cake pops artesanales hechos a mano: Red Velvet, Vainilla y Oreo. Pequeños, deliciosos y hechos para disfrutar."
@@ -26,7 +26,7 @@
     />
     <meta property="og:locale" content="es_CO" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CAKE POPS — Cake pops artesanales" />
+    <meta name="twitter:title" content="mini bites — Cake pops artesanales" />
     <meta
       name="twitter:description"
       content="Cake pops artesanales hechos a mano: Red Velvet, Vainilla y Oreo."
@@ -54,13 +54,13 @@
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=4" />
+    <link rel="stylesheet" href="css/styles.css?v=5" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "FoodEstablishment",
-        "name": "CAKE POPS",
+        "name": "mini bites",
         "description": "Cake pops artesanales hechos a mano: Red Velvet, Vainilla y Oreo.",
         "servesCuisine": "Reposteria",
         "telephone": "+573013038919",
@@ -76,8 +76,20 @@
     <header class="site-header">
       <div class="container nav-bar">
         <a href="#inicio" class="brand">
-          <span class="brand-name">CAKE POPS</span>
-          <span class="brand-tagline">artesanales</span>
+          <picture>
+            <source srcset="assets/images/logo.webp" type="image/webp" />
+            <img
+              src="assets/images/logo.png"
+              alt=""
+              width="46"
+              height="46"
+              class="brand-logo"
+            />
+          </picture>
+          <span class="brand-text">
+            <span class="brand-name">mini bites</span>
+            <span class="brand-tagline">cake pops artesanales</span>
+          </span>
         </a>
 
         <nav class="nav-links" aria-label="Navegación principal">
@@ -426,10 +438,11 @@
             sabor y la cantidad, y te confirmamos tu pedido.
           </p>
 
-          <div class="transfer-box">
+          <button type="button" class="transfer-box" data-copy-nequi>
             <span class="label">Transferencias</span>
             <span class="value">Nequi 314 587 7853</span>
-          </div>
+            <span class="status" data-copy-status>Toca para copiar</span>
+          </button>
         </div>
       </section>
     </main>
@@ -437,7 +450,19 @@
     <footer class="site-footer">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand">CAKE POPS</div>
+          <div class="footer-brand-row">
+            <picture>
+              <source srcset="assets/images/logo.webp" type="image/webp" />
+              <img
+                src="assets/images/logo.png"
+                alt=""
+                width="56"
+                height="56"
+                class="footer-logo"
+              />
+            </picture>
+            <span class="footer-brand">mini bites</span>
+          </div>
           <p class="footer-tagline">Pequeños bocados, grandes momentos.</p>
         </div>
         <div>
@@ -467,12 +492,12 @@
       </div>
       <div class="footer-bottom">
         <span
-          >© <span data-year>2026</span> CAKE POPS. Todos los derechos
+          >© <span data-year>2026</span> mini bites. Todos los derechos
           reservados.</span
         >
       </div>
     </footer>
 
-    <script src="js/main.js?v=2"></script>
+    <script src="js/main.js?v=3"></script>
   </body>
 </html>

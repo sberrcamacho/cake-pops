@@ -116,29 +116,43 @@ img { max-width: 100%; display: block; }
 
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 9px;
+  align-items: center;
+  gap: 11px;
   color: var(--chocolate);
+}
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
 }
 
 .brand-name {
   font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 24px;
+  font-size: 22px;
   letter-spacing: 0.01em;
 }
 
 .brand-tagline {
-  font-size: 10px;
-  letter-spacing: 0.22em;
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--chocolate-tertiary);
   font-weight: 500;
 }
 
-@media (max-width: 400px) {
-  /* En pantallas muy angostas, "artesanales" (una sola palabra, no puede
-     partirse) empuja el botón de menú fuera del header. Se oculta para
-     que la marca y el botón hamburguesa siempre quepan en una fila. */
+@media (max-width: 360px) {
+  /* En pantallas muy angostas el subtítulo de dos palabras puede apretar
+     el botón de menú fuera del header; se oculta para que la marca y el
+     botón hamburguesa siempre quepan en una fila. */
   .brand-tagline { display: none; }
 }
 
@@ -859,15 +873,26 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   gap: 9px 16px;
   margin: 20px auto 0;
-  padding: 16px 22px;
+  padding: 17px 22px;
   max-width: 460px;
+  width: 100%;
+  min-height: 62px;
   background: rgba(255, 247, 242, 0.1);
   border: 1px solid rgba(255, 247, 242, 0.28);
   border-radius: 20px;
   text-align: center;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.transfer-box:hover,
+.transfer-box:focus-visible {
+  background: rgba(255, 247, 242, 0.2);
+  transform: translateY(-2px);
 }
 .transfer-box .label { font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pink-2); font-weight: 500; }
 .transfer-box .value { font-size: 17.5px; font-weight: 500; color: var(--cream-on-dark-2); white-space: nowrap; }
+.transfer-box .status { flex-basis: 100%; font-size: 13px; color: var(--pink-2); font-weight: 400; }
 
 /* ==========================================================================
    Footer
@@ -885,6 +910,20 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
   gap: clamp(28px, 4.2vw, 54px);
+}
+
+.footer-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.footer-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
 }
 
 .footer-brand {
